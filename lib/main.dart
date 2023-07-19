@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:wheelsndeels/UI/onBoarding/onbording_screen.dart';
-import 'package:wheelsndeels/UI/onBoarding/splash_screen.dart';
+import 'package:wheelsndeels/routes/app_routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
-  // This widget is the root of your application.
+  final AppRouter appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: OnboardingScreen());
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      onGenerateRoute: appRouter.onGenerateRoute,
+    );
   }
 }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:wheelsndeels/UI/components/roundButton.dart';
-import 'package:wheelsndeels/UI/const/constant.dart';
 
-import '../const/app_textStyle.dart';
+import '../constants/app_textStyle.dart';
+import '../constants/images.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -40,7 +39,9 @@ class OnboardingScreen extends StatelessWidget {
               Center(
                 child: RoundButton(
                   title: 'Get Started',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/registration');
+                  },
                 ),
               )
             ],
