@@ -32,44 +32,39 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final dateMaskFormatter = MaskTextInputFormatter(mask: dateMask);
-    return TextFormField(
-      style: const TextStyle(color: Colors.black),
-      onChanged: onChanged,
-      enabled: enable,
-      // autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: validator,
-      keyboardType: textKeyboardType,
-      controller: controller,
-      obscureText: obscurText,
-      textInputAction: TextInputAction.done,
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 8),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius:
+              BorderRadius.circular(10), // Set the desired radius value here
+          color: Colors.grey.withOpacity(0.1),
+        ),
+        child: TextFormField(
+          style: TextStyle(color: Colors.black),
+          onChanged: onChanged,
+          enabled: enable,
+          // autovalidateMode: AutovalidateMode.onUserInteraction,
+          validator: validator,
+          keyboardType: textKeyboardType,
+          controller: controller,
+          obscureText: obscurText,
+          textInputAction: TextInputAction.done,
 
-      // maxLines: maxLines == null ? null : maxLines,
-      decoration: InputDecoration(
-        prefixIcon: prefixIcon,
-        suffixIcon: sufixIcon,
-        isDense: true,
-        errorBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.red),
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          // maxLines: maxLines == null ? null : maxLines,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            prefixIcon: prefixIcon,
+            suffixIcon: sufixIcon,
+            isDense: true,
+            border: InputBorder.none,
+
+            // filled: true,
+            // fillColor: Colors.grey.withOpacity(0.2),
+            hintText: hintText,
+            hintStyle: const TextStyle(color: Colors.grey),
+          ),
         ),
-        focusedErrorBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.red),
-          borderRadius: BorderRadius.all(Radius.circular(15.0)),
-        ),
-        disabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey),
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        ),
-        enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.black, width: 2.0),
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        ),
-        focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.black, width: 2.0),
-          borderRadius: BorderRadius.all(Radius.circular(15.0)),
-        ),
-        hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.black),
       ),
     );
   }

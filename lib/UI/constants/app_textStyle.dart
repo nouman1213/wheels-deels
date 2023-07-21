@@ -20,6 +20,15 @@ class AppTextStyle {
     );
   }
 
+  static TextStyle headline2Black(BuildContext context) {
+    return GoogleFonts.urbanist(
+      textStyle: Theme.of(context).textTheme.headlineMedium,
+      fontSize: 24,
+      fontWeight: FontWeight.w800,
+      color: Colors.black,
+    );
+  }
+
   static TextStyle bodyText1(BuildContext context) {
     return GoogleFonts.urbanist(
       textStyle: Theme.of(context).textTheme.bodyLarge,
