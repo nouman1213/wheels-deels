@@ -6,15 +6,15 @@ import '../components/customtextfield.dart';
 import '../components/keybord_hider.dart';
 import '../constants/images.dart';
 
-class RegistrationScreen extends StatefulWidget {
-  const RegistrationScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _RegistrationScreenState createState() => _RegistrationScreenState();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _RegistrationScreenState extends State<RegistrationScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   String signupOption = 'email';
   TextEditingController nameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
@@ -63,8 +63,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          signupOption == "email" ? 'Register' : "Sign Up",
+                          'Welcome Back,',
                           style: AppTextStyle.headline2Black(context),
+                        ),
+                        const SizedBox(height: 5),
+                        Text(
+                          'Please enter your details',
+                          style: AppTextStyle.bodyText2(context),
                         ),
                         const SizedBox(height: 15),
                         Row(
@@ -93,32 +98,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             const Text('Mobile'),
                           ],
                         ),
-                        const SizedBox(height: 10.0),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: CustomTextField(
-                                hintText: 'Name',
-                                controller: nameController,
-                                prefixIcon: Icon(
-                                  Icons.person_outline,
-                                  size: 18,
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 12),
-                            Expanded(
-                              child: CustomTextField(
-                                hintText: 'Last Name',
-                                controller: lastNameController,
-                                prefixIcon: Icon(
-                                  Icons.person_outline,
-                                  size: 18,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        const SizedBox(height: 15),
                         if (signupOption == 'email')
                           CustomTextField(
                             hintText: 'Email',
@@ -132,7 +112,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           CustomTextField(
                             hintText: 'Mobile',
                             controller: mobileController,
-                            textKeyboardType: TextInputType.phone,
                             prefixIcon: Icon(
                               Icons.phone,
                               size: 18,
@@ -156,81 +135,49 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                   ? Icons.visibility_off_outlined
                                   : Icons.visibility_outlined)),
                         ),
-                        CustomTextField(
-                          hintText: 'Confirm Password',
-                          controller: confirmPasswordController,
-                          prefixIcon: Icon(
-                            Icons.lock_outline,
-                            size: 18,
-                          ),
-                          obscurText: obSText,
-                          sufixIcon: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  obSText = !obSText;
-                                });
-                              },
-                              icon: Icon(obSText
-                                  ? Icons.visibility_off_outlined
-                                  : Icons.visibility_outlined)),
-                        ),
                         SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Checkbox(
-                              value: termsAccepted,
-                              onChanged: (value) {
-                                setState(() {
-                                  termsAccepted = value!;
-                                });
-                              },
-                            ),
-                            Expanded(
-                              child: RichText(
-                                text: TextSpan(
-                                  text: 'By signing up, you agree to our ',
-                                  style: TextStyle(
-                                    color: Colors.black54,
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      text: 'Terms of Service',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w700),
-                                    ),
-                                    TextSpan(text: ' and '),
-                                    TextSpan(
-                                      text: 'Privacy Policy',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w700),
-                                    ),
-                                  ],
-                                ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/resetPass");
+                          },
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'Forgot password? ',
+                              style: TextStyle(
+                                color: Colors.black54,
                               ),
+                              children: [
+                                TextSpan(
+                                  text: 'Reset it',
+                                  style: TextStyle(
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
-                        SizedBox(height: 80),
+                        SizedBox(height: 220),
                         Center(
-                            child:
-                                RoundButton(title: "Register", onTap: () {})),
+                            child: RoundButton(
+                                title: signupOption == "email"
+                                    ? "Sign In"
+                                    : 'Continue with number',
+                                onTap: () {})),
                         SizedBox(height: 40),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, '/login');
+                            Navigator.pushNamed(context, "/registration");
                           },
                           child: Center(
                             child: RichText(
                               text: TextSpan(
-                                text: 'Already have an account? ',
+                                text: 'Don\'t have an account? ',
                                 style: TextStyle(
                                     color: Colors.black87, fontSize: 16),
                                 children: [
                                   TextSpan(
-                                    text: 'Sign In',
+                                    text: 'Sign Up',
                                     style: TextStyle(
                                         color: Colors.red,
                                         fontWeight: FontWeight.w700,
