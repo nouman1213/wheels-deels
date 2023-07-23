@@ -67,7 +67,7 @@ class _ResetPassScreenState extends State<ResetPassScreen> {
                         Text(
                           '      Enter the email or phone number\n associated with your account to reset\n                       your password.',
                           textAlign: TextAlign.justify,
-                          style: AppTextStyle.bodyText2(context).copyWith(
+                          style: AppTextStyle.bodyText2Black(context).copyWith(
                             height: 1.5,
                           ),
                         ),

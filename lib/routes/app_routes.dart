@@ -7,6 +7,7 @@ import 'package:wheelsndeels/UI/onBoarding/splash_screen.dart';
 
 import '../UI/authentication/login_screen.dart';
 import '../UI/authentication/reset_pass.dart';
+import '../UI/home/bottom_navbar.dart';
 import '../UI/notfound.dart';
 
 class AppRouter {
@@ -31,6 +32,9 @@ class AppRouter {
                 ));
       case '/newPass':
         return MaterialPageRoute(builder: (_) => NewPasswordScreen());
+
+      case '/bottomNavbar':
+        return MaterialPageRoute(builder: (_) => BottomNavBar());
       default:
         return MaterialPageRoute(builder: (_) => const NotFoundScreen());
     }

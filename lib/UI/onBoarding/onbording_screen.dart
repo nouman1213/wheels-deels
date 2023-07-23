@@ -32,7 +32,7 @@ class OnboardingScreen extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 "You choose your car online.We inspect it\n and deliver it.",
-                style: AppTextStyle.bodyText1(context)
+                style: AppTextStyle.bodyText1Black(context)
                     .copyWith(color: Colors.white.withOpacity(0.5)),
               ),
               const Spacer(),

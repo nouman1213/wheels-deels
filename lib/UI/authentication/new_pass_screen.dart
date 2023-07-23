@@ -44,7 +44,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 const SizedBox(height: 5),
                 Text(
                   'Awesome. You’re successfully updated\n                   your password.',
-                  style: AppTextStyle.bodyText2(context),
+                  style: AppTextStyle.bodyText2Black(context),
                 ),
                 const SizedBox(height: 25),
                 Center(
@@ -106,7 +106,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                         const SizedBox(height: 15),
                         Text(
                           'Your new password must be different\nfrom previous password.',
-                          style: AppTextStyle.bodyText2(context),
+                          style: AppTextStyle.bodyText2Black(context),
                         ),
                         const SizedBox(height: 25),
                         CustomTextField(

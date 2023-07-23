@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(height: 5),
                         Text(
                           'Please enter your details',
-                          style: AppTextStyle.bodyText2(context),
+                          style: AppTextStyle.bodyText2Black(context),
                         ),
                         const SizedBox(height: 15),
                         Row(

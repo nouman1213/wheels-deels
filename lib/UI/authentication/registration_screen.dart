@@ -215,8 +215,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         ),
                         SizedBox(height: 80),
                         Center(
-                            child:
-                                RoundButton(title: "Register", onTap: () {})),
+                            child: RoundButton(
+                                title: "Register",
+                                onTap: () {
+                                  Navigator.pushNamed(context, '/bottomNavbar');
+                                })),
                         SizedBox(height: 40),
                         GestureDetector(
                           onTap: () {

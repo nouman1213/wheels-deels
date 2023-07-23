@@ -29,7 +29,7 @@ class AppTextStyle {
     );
   }
 
-  static TextStyle bodyText1(BuildContext context) {
+  static TextStyle bodyText1Whit(BuildContext context) {
     return GoogleFonts.urbanist(
       textStyle: Theme.of(context).textTheme.bodyLarge,
       fontSize: 16,
@@ -37,7 +37,23 @@ class AppTextStyle {
     );
   }
 
-  static TextStyle bodyText2(BuildContext context) {
+  static TextStyle bodyText1Black(BuildContext context) {
+    return GoogleFonts.urbanist(
+      textStyle: Theme.of(context).textTheme.bodyLarge,
+      fontSize: 16,
+      color: Colors.black,
+    );
+  }
+
+  static TextStyle bodyText2White(BuildContext context) {
+    return GoogleFonts.urbanist(
+      textStyle: Theme.of(context).textTheme.bodyMedium,
+      fontSize: 14,
+      color: Colors.white,
+    );
+  }
+
+  static TextStyle bodyText2Black(BuildContext context) {
     return GoogleFonts.urbanist(
       textStyle: Theme.of(context).textTheme.bodyMedium,
       fontSize: 14,

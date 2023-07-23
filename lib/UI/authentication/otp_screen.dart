@@ -68,7 +68,7 @@ class _OTPScreenState extends State<OTPScreen> {
                               ? '   Check your email inbox and input the\nverification code to verify your account.'
                               : '   Check your messages inbox and input\n the verification code to verify your account.',
                           textAlign: TextAlign.justify,
-                          style: AppTextStyle.bodyText2(context).copyWith(
+                          style: AppTextStyle.bodyText2Black(context).copyWith(
                             height: 1.5,
                           ),
                         ),
