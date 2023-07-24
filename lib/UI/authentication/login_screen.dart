@@ -163,7 +163,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 title: signupOption == "email"
                                     ? "Sign In"
                                     : 'Continue with number',
-                                onTap: () {})),
+                                onTap: () {
+                                  Navigator.pushNamed(context, '/bottomNavbar');
+                                })),
                         SizedBox(height: 40),
                         GestureDetector(
                           onTap: () {
