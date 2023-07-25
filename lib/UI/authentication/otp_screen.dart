@@ -31,7 +31,7 @@ class _OTPScreenState extends State<OTPScreen> {
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Opacity(
-                    opacity: 0.1,
+                    opacity: 0.2,
                     child: Image.asset(
                       bgLogo,
                       scale: 1,

@@ -28,7 +28,7 @@ class _ResetPassScreenState extends State<ResetPassScreen> {
           child: Stack(
             children: [
               Opacity(
-                opacity: 0.1,
+                opacity: 0.2,
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Opacity(
