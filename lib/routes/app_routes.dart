@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wheelsndeels/UI/authentication/new_pass_screen.dart';
 import 'package:wheelsndeels/UI/authentication/otp_screen.dart';
 import 'package:wheelsndeels/UI/authentication/registration_screen.dart';
+import 'package:wheelsndeels/UI/home/car_list_screen.dart';
 import 'package:wheelsndeels/UI/onBoarding/onbording_screen.dart';
 import 'package:wheelsndeels/UI/onBoarding/splash_screen.dart';
 
@@ -35,6 +36,7 @@ class AppRouter {
 
       case '/bottomNavbar':
         return MaterialPageRoute(builder: (_) => BottomNavBar());
+
       default:
         return MaterialPageRoute(builder: (_) => const NotFoundScreen());
     }

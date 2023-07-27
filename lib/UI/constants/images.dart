@@ -23,3 +23,4 @@ const Suzuki = "assets/images/Suzuki.png";
 const carLogo = "assets/images/carLogo.png";
 const featuredLogo = "assets/images/featuredLogo.png";
 const car1 = "assets/images/car1.png";
+const car2 = "assets/images/car2.png";

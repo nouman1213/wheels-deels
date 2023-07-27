@@ -3,6 +3,7 @@ import 'package:wheelsndeels/UI/components/home_top_row.dart';
 import 'package:wheelsndeels/UI/components/keybord_hider.dart';
 import 'package:wheelsndeels/UI/components/roundButton.dart';
 import 'package:wheelsndeels/UI/constants/app_textStyle.dart';
+import 'package:wheelsndeels/UI/home/car_list_screen.dart';
 
 import '../components/brand_widget.dart';
 import '../components/featuredCardWidget.dart';
@@ -171,10 +172,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 }
 
 class BranView extends StatelessWidget {
-  const BranView({
+  BranView({
     super.key,
   });
-
+  String? featuredCar = "Featured cars";
+  String? usedCar = "Used cars";
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -247,11 +249,12 @@ class BranView extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 10),
           Text(
-            "Feature used cars",
+            "$featuredCar",
             style: AppTextStyle.headline2Black(context),
           ),
-          SizedBox(width: 10),
+          SizedBox(height: 10),
           SizedBox(
             height: 200,
             child: ListView.builder(
@@ -264,7 +267,42 @@ class BranView extends StatelessWidget {
                   price: 'PKR 40.3 lacs',
                   specfi: '2017  |  33.9 km  |  Petrol',
                   title: 'Toyota corolla 2021',
-                  ontap: () {},
+                  ontap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) =>
+                                CarListScreen(appBarTitle: featuredCar)));
+                  },
+                );
+              },
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            "$usedCar",
+            style: AppTextStyle.headline2Black(context),
+          ),
+          SizedBox(height: 10),
+          SizedBox(
+            height: 200,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 4,
+              itemBuilder: (BuildContext context, int index) {
+                return FeaturedCardWidget(
+                  city: '$dropDownSelectedValue',
+                  image: '$car2',
+                  price: 'PKR 40.3 lacs',
+                  specfi: '2017  |  33.9 km  |  Petrol',
+                  title: 'Toyota corolla 2021',
+                  ontap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) =>
+                                CarListScreen(appBarTitle: usedCar)));
+                  },
                 );
               },
             ),
