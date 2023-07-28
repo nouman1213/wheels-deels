@@ -8,15 +8,24 @@ class CarListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          centerTitle: true,
-          title: Text(appBarTitle ?? 'Default Title'),
-        ),
-        body: Center(
-          child: Text('Your Car List Content Goes Here'),
-        ),
-      ),
+          appBar: AppBar(
+            backgroundColor: Colors.black,
+            centerTitle: true,
+            title: Text(appBarTitle ?? 'Default Title'),
+          ),
+          body: Column(
+            children: [
+              SizedBox(
+                height: 120,
+                child: ListView.builder(
+                  itemCount: 1,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Chip(label: Text("price"));
+                  },
+                ),
+              ),
+            ],
+          )),
     );
   }
 }
