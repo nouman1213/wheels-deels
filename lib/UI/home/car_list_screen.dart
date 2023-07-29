@@ -24,6 +24,7 @@ class CarListScreen extends StatelessWidget {
                   },
                 ),
               ),
+              SizedBox(height: 10),
             ],
           )),
     );
