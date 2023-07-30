@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../constants/globals_variables.dart';
 import '../constants/images.dart';
 
 class FeaturedCardWidget extends StatelessWidget {
@@ -28,8 +27,9 @@ class FeaturedCardWidget extends StatelessWidget {
       child: Card(
         elevation: 2,
         child: Container(
-          width: 150,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+          ),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +41,11 @@ class FeaturedCardWidget extends StatelessWidget {
                           topLeft: Radius.circular(12),
                           topRight: Radius.circular(12),
                         ),
-                        child: Image.asset(image)),
+                        child: Container(
+                          child: Image.asset(
+                            image,
+                          ),
+                        )),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -63,8 +67,10 @@ class FeaturedCardWidget extends StatelessWidget {
                             ],
                           ),
                         ),
+                        SizedBox(width: 40),
                         Container(
-                            margin: EdgeInsets.only(right: 8, top: 5),
+                            alignment: Alignment.centerRight,
+                            // margin: EdgeInsets.only(right: 8, top: 5),
                             child: Image.asset(featuredLogo)),
                       ],
                     ),
